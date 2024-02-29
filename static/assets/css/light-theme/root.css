@@ -1,0 +1,155 @@
+:root {
+  --background-primary: #fbfeff;
+  --background-secondary: #e8f2ff;
+  --background-body: #e4eeff80;
+  --background-tertiary: #f6faff;
+  --border-primary: #eaeaea;
+  --border-accent: #333;
+  --text-solid: #222;
+  --text-primary: #3d3d3d;
+  --text-secondary: #656676;
+  --text-tertiary: #6d748a96;
+  --text-white: #fff;
+  --text-black: #333;
+  --text-super-black: #000;
+  --text-white-secondary: #ffffff6e;
+  --text-blue: rgb(69, 143, 255);
+  --text-orange: rgb(255, 153, 0);
+  --text-js: rgb(214 197 0);
+  --scroll-background: rgb(207, 236, 255);
+  --scroll-thumb: rgb(176, 206, 226);
+  --shadow-primary: #798db140;
+  --hr-color: #4c567be3;
+  --primary: #00A7CC;
+  --danger: #f74a4a;
+  --success: #20ab6a;
+  --purple: #6259ca;
+  --bg-primary-gradient: linear-gradient(to bottom right, #4be8d4 0%, #129bd2 100%);
+  --bg-danger-gradient: linear-gradient(to bottom right, #f1bf64 0%, #f71d36 100%);
+  --bg-purple-gradient: linear-gradient(to bottom right, #9e88f5 0%, #6259ca 100%);
+  --bg-crystal-gradient: linear-gradient(to bottom right, #21e081 0%, #227fdc 100%);
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(../../fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: SourceSansPro-Regular;
+  src: url(../../fonts/SourceSansPro-Regular.ttf);
+}
+
+.pointer-cursor {
+  cursor: pointer;
+}
+
+.text-family-ssp {
+  font-family: 'SourceSansPro-Regular';
+}
+
+.text-solid {
+  color: var(--text-solid);
+}
+
+.text-primary {
+  color: var(--text-primary) !important;
+}
+
+.primary-text {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-tertiary {
+  color: var(--text-tertiary);
+}
+
+.text-blue {
+  color: var(--text-blue);
+}
+
+.text-orange {
+  color: var(--text-orange);
+}
+
+.text-js {
+  color: var(--text-js);
+}
+
+.text-black {
+  color: var(--text-black);
+}
+
+.text-super-black {
+  color: var(--text-super-black);
+}
+
+.text-purple {
+  color: var(--purple);
+}
+
+.text-success {
+  color: var(--success);
+}
+
+.text-danger {
+  color: var(--danger);
+}
+
+.text-sm {
+  font-size: .875em;
+}
+
+.bg-primary {
+  background-color: var(--background-primary);
+}
+
+.bg-primary-gd {
+  background: var(--bg-primary-gradient);
+  color: var(--text-white);
+}
+
+.bg-danger-gd {
+  background: var(--bg-danger-gradient);
+  color: var(--text-white);
+}
+
+.bg-purple-gd {
+  background: var(--bg-purple-gradient);
+  color: var(--text-white);
+}
+
+.bg-crystal-gd {
+  background: var(--bg-crystal-gradient);
+  color: var(--text-white);
+}
+
+.page-title {
+  display: flex;
+}
+
+.page-title .text {
+  display: inline-flex;
+  align-items: center;
+}
+
+.page-title .text::before {
+  content: "";
+  margin-right: 10px;
+  width: 30px;
+  border-radius: 5px;
+  height: 8px;
+  background-color: var(--primary);
+}
+
+.page-lead {
+  padding-left: 42px;
+}
+
+textarea:focus, textarea.form-control:focus, input.form-control:focus, input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=number]:focus, [type=text].form-control:focus, [type=password].form-control:focus, [type=email].form-control:focus, [type=tel].form-control:focus, [contenteditable].form-control:focus, button.btn:focus, select.form-control:focus {
+  box-shadow: 0 4px 10px var(--shadow-primary)
+}

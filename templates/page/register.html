@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<style>
+    * {
+     margin: 0;
+     padding: 0;
+ }
+
+ html {
+     height: 100%;
+ }
+
+ body {
+     height: 100%;
+ }
+
+ .container {
+     height: 100%;
+     background-image: linear-gradient(to right, #fbc2eb, #a6c1ee);
+ }
+
+ .login-wrapper {
+     background-color: #fff;
+     width: 358px;
+     height: 588px;
+     border-radius: 15px;
+     padding: 0 50px;
+     position: relative;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);
+ }
+
+ .header {
+     font-size: 38px;
+     font-weight: bold;
+     text-align: center;
+     line-height: 200px;
+ }
+
+ .input-item {
+     display: block;
+     width: 100%;
+     margin-bottom: 20px;
+     border: 0;
+     padding: 10px;
+     border-bottom: 1px solid rgb(128, 125, 125);
+     font-size: 15px;
+     outline: none;
+ }
+
+ .input-item::placeholder {
+     text-transform: uppercase;
+ }
+
+ .btn {
+     text-align: center;
+     padding: 10px;
+     width: 100%;
+     margin-top: 40px;
+     background-image: linear-gradient(to right, #a6c1ee, #fbc2eb);
+     color: #fff;
+ }
+
+ .msg {
+     text-align: center;
+     line-height: 88px;
+ }
+
+ a {
+     text-decoration-line: none;
+     color: #abc1ee;
+ }
+
+</style>
+<body>
+<div class="container">
+        <div class="login-wrapper">
+            <div class="header">Register</div>
+            <form method="post" action="{% url 'register' %}">
+                {% csrf_token %}
+            <div class="form-wrapper">
+                <input type="text" name="username" placeholder="请输入用户名" class="input-item"> 
+                {% if form.username.errors %}
+                    <p style="color: red;">{{ form.username.errors }}</p>
+                {% endif %}
+                <input type="password" name="password1" placeholder="请输入密码" class="input-item">
+                {% if form.password1.errors %}
+                    <p style="color: red;">{{ form.password1.errors }}</p>
+                {% endif %}
+                <input type="password" name="password2" placeholder="请确认密码" class="input-item">
+                {% if form.password2.errors %}
+                    <p style="color: red;">{{ form.password2.errors }}</p>
+                {% endif %}
+                <button type="submit" class="btn">注册</button>
+            </div>
+                  </form>
+             {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                        <div class="{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="msg">
+                Don't have account?
+                <a href="/app/login/">Sign in</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

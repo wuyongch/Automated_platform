@@ -1,0 +1,6 @@
+footer.r-footer {
+  position: relative;
+  background-color: var(--background-primary);
+  padding: 1rem .5rem;
+  transition: .5s;
+}

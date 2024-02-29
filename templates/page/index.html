@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首页</title>
+  <link rel="icon" href="{% static 'assets/img/logos/logo-square.png' %}" type="image/icon type">
+  <link rel="stylesheet" href={% static 'assets/plugins/bootstrap-5.0.2-dist/css/bootstrap.min.css'%}>
+  <link rel="stylesheet" href={% static 'assets/plugins/highlightjs-11.1.0/atom-one-dark.min.css' %}>
+  <link rel="stylesheet" href={% static 'assets/css/style.css' %}>
+  <link rel="stylesheet" href="{% static 'assets/plugins/fontawesome-free/css/all.min.css' %}">
+{#  <link href="{% static 'assets/fontawesome-free-5.15.4-web/css/fontawesome.min.css' %}" rel="stylesheet"/>#}
+</head> 
+
+<body>
+  <nav class="side-nav">
+    <div class="logo">
+      <a href="/app/dashboard/"><img src={% static 'assets/img/logos/logo-landscape.png' %} alt="logo"></a>
+      <button class="btn btn-default ml-auto py-0 px-0 minify-sidenav"><i class="fa fa-align-justify"></i>
+         <i class="bi bi-arrow-left-short"></i></button>
+    </div>
+    <div class="d-flex justify-content-center mb-2">
+      <img src={% static 'assets/img/avatar/img.png' %} class="avatar" alt="gp">
+    </div>
+    <div class="text-center mini-hide"> <span>{{user}}</span> </div>
+    <div class="text-center mini-hide text-tertiary mb-3">
+      <small>{{ email }}</small>
+    </div>
+    <ul>
+      <li><a href="/app/dashboard/"><i class="fa fa-tachometer-alt text-blue"></i><span>首页</span></a></li>
+      <li>
+        <a href="javascript:" class="has-child">
+          <i class="fa fa-dharmachakra text-orange"></i><span>工作台</span>
+        </a>
+        <ul>
+          <li><a href="/app/project"><span>项目管理</span></a></li>
+          <li><a href="/app/page"><span>页面管理</span></a></li>
+          <li><a href="/app/element"><span>页面元素</span></a></li>
+          <li><a href="/app/keyword"><span>关键字库</span></a></li>
+        </ul>
+      </li>
+      <li>
+        <a class="has-child" href="javascript:"><i class="fas fa-puzzle-piece text-purple"></i><span>测试用例管理</span></a>
+        <ul>
+          <li><a href="/app/testcase"><span>测试用例编写</span></a></li>
+          <li><a href="/app/result"><span>测试结果查看</span></a></li>
+
+        </ul>
+      </li>
+{#      <li>#}
+{#        <a class="has-child" href="javascript:"><i#}
+{#            class="fas fa-exclamation-triangle text-danger"></i><span>Errors</span></a>#}
+{#        <ul>#}
+{#          <li><a href="#"><span>401</span></a></li>#}
+{#          <li><a href="#"><span>404</span></a></li>#}
+{#        </ul>#}
+{#      </li>#}
+      <li>
+        <a href="javascript:" class="has-child"><i class="fa fa-layer-group text-js"></i><span>微服务</span></a>
+        <ul>
+          <li><a href="/app/loginConfig"><span>登录配置</span></a></li>
+          <li><a href="/app/task"><span>任务管理</span></a></li>
+          <li>
+                </ul>
+              </li>
+            </ul>
+  </nav>
+  <nav class="appbar">
+    <div class="appbar-items">
+      <button class="sidebar-btn-mobile"><i class="fa fa-align-justify"></i></button>
+      <form action="#">
+        <div class="appbar-form-group">
+          <label class="icon" for="appbar-search"></label>
+          <input type="text" id="appbar-search" class="appbar-search" placeholder="Search">
+        </div>
+      </form>
+    </div>
+    <div class="appbar-items">
+      <ul class="appbar-menu">
+          <li><a href="#"><i class="fa fa-bell"></i><span class="caption">Notifications</span></a></li>
+          <li><a href="#"><i class="fa fa-envelope"></i><span class="caption">Emails</span></a></li>
+        <li class="dropdown"><a href="#"><img src={% static 'assets/img/avatar/img.png' %} alt="gp" class="appbar-avatar"><span
+              class="caption visible">{{user}}</span></a>
+          <ul class="py-2 shadow-3-5-20">
+            <li><a href="#" class="py-1 d-flex justify-items-center">
+                <i class="fa fa-user text-blue me-2"></i>
+                <div>个人中心</div>
+              </a></li>
+            <li><a href="/app/logout/" class="py-1 d-flex justify-items-center">
+                <i class="fa fa-sign-out-alt text-danger me-2"></i>
+                <div>退出登录</div>
+              </a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="r-container" id="content">
+    <!-- here is your content fully loaded -->
+  </div>
+  <footer class="r-footer a-bold">
+    <div class="container-xxl d-flex justify-content-between align-middle">
+      <div><a href="https://blog.csdn.net/wuyomhchang/article/details/136364272?spm=1001.2014.3001.5502" target="_blank">Automated_platform-自动化测试平台</a></div>
+      <div class="text-end"><span class="me-1">作者联系邮箱</span> 1668566412@qq.com
+          </div>
+    </div>
+  </footer>
+  <script src={% static 'assets/plugins/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js' %}></script>
+  <script src={% static 'assets/plugins/jquery-3.6.0/jquery.min.js' %}></script>
+  <script src={% static 'assets/js/reskara-bootstrap.js' %}></script>
+  <script>
+    $(document).ready(function () {
+      const awesome = document.createElement("link")
+      awesome.setAttribute("rel", "stylesheet")
+      awesome.setAttribute("href", {% static 'assets/plugins/fontawesome-free/css/all.min.css' %})
+      document.querySelector("head").appendChild(awesome)
+
+    })
+
+  </script>
+  <script>
+    const base_url = location.href
+    if (window.location.pathname.substr(window.location.pathname.length - 1) != "/") location.href = location.href + "/"
+
+    const content = document.getElementById("content")
+
+    if (window.location.hash !== "") loading(window.location.hash.substr(2), window.location.hash)
+    else loading("pages/dashboard.html")
+
+    window.addEventListener("hashchange", function (ev) {
+      const href = findHash(ev.newURL);
+      if (href.valid) loading(href.url, "none")
+    })
+
+    function findHash(url) {
+      let valid = false;
+      for (var i = 0; i < url.length; i++) {
+        if (url.substring(i, i + 1) == "#") {
+          var newUrl = url.substring(i)
+          if (newUrl.substring(0, 1) == "#" && newUrl.substring(0, 2) == "#/") {
+            newUrl = newUrl.substring(2)
+            valid = true;
+            break
+          }
+          else if (newUrl.substring(0, 1) == "#") {
+            newUrl = newUrl.substring(1)
+            break
+          }
+        }
+      }
+      return { url: newUrl, valid: valid }
+    }
+    $("nav.side-nav").find("a").click(function (e) {
+      e.preventDefault()
+      const href = $(this).attr("href")
+        , host = href.replace(/(http:\/\/|https:\/\/)/g, "").split("/")[0]
+        , isHosted = href.includes("http://") || href.includes("https://")
+        , target = $(this).attr("target")
+
+      if (href !== "javascript:" && href !== "#" && href !== "index.html") window.location.hash = "/" + href
+    })
+
+    function loading(url, after = "") {
+      $("#content").html(`
+      <div class="d-flex justify-content-center w-100 align-self-center" style="min-height: 77vh;">
+        <div class="spinner-border text-primary align-self-center" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>`
+      )
+      $.ajax({
+        url: url,
+        type: "GET",
+        mimeType: "text/html charset=utf-8",
+        async: true,
+        cache: false,
+        success: function (data) {
+          $("#content").html(data)
+          if (after != "none") window.location.hash = after
+        }
+      })
+    }
+  </script>
+</body>
+
+</html>

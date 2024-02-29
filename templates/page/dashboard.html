@@ -1,0 +1,257 @@
+{% load static %}
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet"/>
+    <link href="{% static 'assets/css/font-awesome.css' %}" rel="stylesheet"/>
+    <link href="{% static 'assets/js/morris/morris-0.4.3.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'assets/css/custom-styles.css' %}" rel="stylesheet"/>
+<div class="container-xxl">
+    <nav class="breadcrumb bg-transparent px-3 align-items-center" aria-label="breadcrumb">
+        <div>
+            <div class="fs-5 fw-bold text-solid">系统概况</div>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/app/index/#//app/dashboard/"><small>首页</small></a></li>
+                <li class="breadcrumb-item active" aria-current="page"><small>系统概况</small></li>
+            </ol>
+        </div>
+        <div>
+            <a href="/admin/" target="_blank" class="btn btn-primary btn-sm primary-y-shadow">后台管理系统</a>
+        </div>
+    </nav>
+    <div class="row px-3">
+        <div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+            <div class="widget d-flex justify-content-between py-3 px-4 shadow-0-0-2">
+                <div>
+                    <div class="fs-6 text-secondary"><small>项目数</small></div>
+                    <div class="fs-3 fw-bold text-solid">2</div>
+                    <div class="fs-6 text-secondary"><small><i class="fa fa-arrow-circle-up text-success"></i> <span
+                            class="text-success">0%</span> 一分钟前</small></div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="avatar avatar-md d-flex justify-content-center align-items-center bg-primary-gd shadow-3-5-20">
+                        <i class="fa fa-chart-bar"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+            <div class="widget d-flex justify-content-between py-3 px-4 shadow-0-0-2">
+                <div>
+                    <div class="fs-6 text-secondary"><small>用例数</small></div>
+                    <div class="fs-3 fw-bold text-solid">2</div>
+                    <div class="fs-6 text-secondary"><small><i class="fa fa-arrow-circle-down text-danger"></i> <span
+                            class="text-danger">0%</span> 一分钟前</small></div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="avatar avatar-md d-flex justify-content-center align-items-center bg-danger-gd shadow-3-5-20">
+                        <i class="fa fa-rocket"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+            <div class="widget d-flex justify-content-between py-3 px-4 shadow-0-0-2">
+                <div>
+                    <div class="fs-6 text-secondary"><small>关键字库</small></div>
+                    <div class="fs-3 fw-bold text-solid">3</div>
+                    <div class="fs-6 text-secondary"><small><i class="fa fa-arrow-circle-up text-success"></i> <span
+                            class="text-success">0%</span>一分钟前</small></div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="avatar avatar-md d-flex justify-content-center align-items-center bg-purple-gd shadow-3-5-20">
+                        <i class="fa fa-hand-holding-usd"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+            <div class="widget d-flex justify-content-between py-3 px-4 shadow-0-0-2">
+                <div>
+                    <div class="fs-6 text-secondary"><small>BUG数</small></div>
+                    <div class="fs-3 fw-bold text-solid">0</div>
+                    <div class="fs-6 text-secondary"><small><i class="fa fa-arrow-circle-up text-danger"></i> <span
+                            class="text-danger">0%</span>一分钟前</small></div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="avatar avatar-md d-flex justify-content-center align-items-center bg-crystal-gd shadow-3-5-20">
+                        <i class="fa fa-wrench"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-12 pb-3">
+            <div class="widget pt-3 pb-4 px-4 shadow-0-0-2">
+                <div class="fw-bold fs-6 text-solid mb-1">测试结果趋势
+                    <hr>
+                </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div id="line-chart"></div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        
+        <div class="col-xl-6 col-lg-6 col-md-12 pb-3">
+            <div class="widget pt-3 pb-4 px-4 shadow-0-0-2">
+                <div class="fw-bold fs-6 text-solid mb-1"> 测试用例执行情况
+                    <hr>
+                </div>
+                <div class="pt-2">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div id="bar-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src={% static 'assets/plugins/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js' %}></script>
+<script src={% static 'assets/plugins/jquery-3.6.0/jquery.min.js' %}></script>
+<script src="{% static 'assets/js/morris/morris.js' %}"></script>
+<script src="{% static 'assets/js/dataTables/jquery.dataTables.js' %}"></script>
+<script src="{% static 'assets/js/dataTables/dataTables.bootstrap.js' %}"></script>
+<script src="{% static 'assets/js/custom-scripts.js' %}"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+<script src={% static 'assets/plugins/chartjs-3.5.0/chart.min.js' %}></script>
+
+<script>
+    init();
+
+    function init() {
+        $("#Summary").find("tr").remove();
+        $.ajax({
+            url: '/api/projectSummary',
+            type: 'POST',
+            dataType: 'json',
+            success: function (res) {
+                if (res.code == 200) {
+                    var tr = '';
+                    for (var i = 0; i < res.data.length; i++) {
+                        tr += "<tr class='odd'>";
+                        tr += "<td class='center'>" + res.data[i].projectName + "</td>";
+                        tr += '<td class="center">' + res.data[i].testcaseNum + '</td>';
+                        tr += "<td class='center'>" + res.data[i].successfulTotal + "</td>";
+                        tr += '<td class="center">' + res.data[i].failureTotal + '</td>';
+                        tr += "<td class='center'>" + res.data[i].successfulToday + "</td>";
+                        tr += '<td class="center">' + res.data[i].failureToday + '</td>';
+                        tr += '</tr>';
+                    }
+                    $("#Summary").append(tr);
+                }
+            }
+        });
+        loadingChar();
+        loadLineChar();
+    }
+
+
+    function loadLineChar() {
+    $.ajax({
+        url: '/api/lineChar',
+        type: 'POST',
+        dataType: 'json',
+        success: function (res) {
+            if (res.code == 200) {
+                var xAxis = {
+                    categories: res.data.days,
+                };
+                var yAxis = {
+                    title: {
+                        text: '次数'
+                    }
+                };
+
+                var plotOptions = {
+                    series: {
+                        marker: {
+                            enabled: true,
+                            symbol: 'circle', // 设置数据点为圆形
+                            radius: 4
+                        },
+                        enableMouseTracking: true // 允许鼠标跟踪
+                    }
+                };
+
+                var tooltip = {
+                    formatter: function () {
+                        return '<b>' + this.series.name + '</b><br>日期: ' + this.x + '<br>次数: ' + this.y;
+                    }
+                };
+
+                var series = res.data.data;
+                // 对成功和失败两条线进行配色设置
+                series[0].color = '#5a9bd4'; // 
+                series[1].color = '#ff6666'; // 
+
+                var json = {};
+                json.title = false;
+                json.xAxis = xAxis;
+                json.yAxis = yAxis;
+                json.series = series;
+                json.plotOptions = plotOptions;
+                json.tooltip = tooltip;
+
+                $('#line-chart').highcharts(json);
+            }
+        }
+    });
+}
+
+
+    function loadingChar() {
+        $.ajax({
+            url: '/api/barChar',
+            type: 'POST',
+            dataType: 'json',
+            success: function (res) {
+                if (res.code == 200) {
+                    var chart = {
+                        type: 'column'
+                    };
+                    var xAxis = {
+                        categories: res.data.project,
+                        crosshair: true
+                    };
+                    var yAxis = {
+                        min: 0,
+                        title: {
+                            text: '次数'
+                        }
+                    };
+                    var tooltip = {
+                        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                            '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
+                        footerFormat: '</table>',
+                        shared: true,
+                        useHTML: true
+                    };
+                    var plotOptions = {
+                        column: {
+                            pointPadding: 0.2,
+                            borderWidth: 0
+                        }
+                    };
+                    var credits = {
+                        enabled: false
+                    };
+
+                    var series = res.data.data
+
+                    var json = {};
+                    json.chart = chart;
+                    json.title = false
+                    json.tooltip = tooltip;
+                    json.xAxis = xAxis;
+                    json.yAxis = yAxis;
+                    json.series = series;
+                    json.plotOptions = plotOptions;
+                    json.credits = credits;
+                    $('#bar-chart').highcharts(json);
+                }
+            }
+        });
+    }
+ </script>
