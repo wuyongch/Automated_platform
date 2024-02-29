@@ -36,7 +36,13 @@ settings.py中对mysql的配置（全部改成自己的数据库和用户名密�
 迁移成功后可以看到新增了如下表 
 ![img_9.png](img_9.png)
 
-4、安装RabbitMQ
+
+4、Django创建超级用户
+进入项目根目录，输入命令`python manage.py createsuperuser`，然后根据提示输入用户名、邮箱和密码
+密码必须满足复杂性要求，通常至少为8个字符，包含大小写字母、特殊字符和数字的组合。如果命令执行失败，可能是因为没有在终端中运行命令，而是通过图形界面运行导致的错误。在这种情况下，可以尝试在终端中输入命令`python manage.py shell`，然后执行同样的`createsuperuser`命令。
+创建成功后，可以使用新创建的超级用户账户登录到Django的管理后台，地址通常为`http://localhost:8000/admin`。在管理后台中，可以进行用户管理、权限管理等操作。
+
+5、安装RabbitMQ
  首先下载与安装 erlang erlang
 下载地址 http://www.erlang.org/downloads 下载后点击运行一直next即可。
 下载RabbitMQ Github仓库
@@ -48,6 +54,6 @@ rabbitmq-plugins enable rabbitmq_management
 ![img_10.png](img_10.png)
 执行成功后 就可以打开浏览器访问localhost:15672 账号和密码为guest
 
-5、执行异步任务/定时任务命令（项目根目录命令行输入）
+6、执行异步任务/定时任务命令（项目根目录命令行输入）
 python manage.py celeryd -l info # 启动 celery 异步执行测试案例 
 python manage.py celerybeat -l info # 启动 celery 定时执行测试案例
